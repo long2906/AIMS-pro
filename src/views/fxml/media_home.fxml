@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="211.0" prefWidth="298.0" style="-fx-border-color: #ccd9ff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="283.0" style="-fx-border-color: #ccd9ff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="mediaImage" fitHeight="152.0" fitWidth="160.0" layoutX="14.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="mediaImage" fitHeight="152.0" fitWidth="160.0" layoutX="35.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../media/nguyenlm/DriverD/Documents/UNIVERSITY/PERSONAL/PROJECT/Java/TA-TKXDPM/AIMS/assets/images/book2." />
+            <Image url="@../../../assets/images/book/book4.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="200.0" layoutY="-1.0" prefHeight="210.0" prefWidth="110.0">
+      <Pane layoutX="167.0" layoutY="-1.0" prefHeight="210.0" prefWidth="118.0">
          <children>
             <VBox prefHeight="39.0" prefWidth="110.0">
                <children>
@@ -74,7 +74,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="72.0" prefWidth="106.0">
                      <children>
-                        <Button fx:id="addToCartBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" style="-fx-cursor: hand;" text="Add to Cart" />
+                        <Button fx:id="addToCartBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: transparent; -fx-border-radius: 20; -fx-border-color: #2A73FF; -fx-cursor: hand;" text="Add to Cart" />
                      </children>
                   </HBox>
                </children>

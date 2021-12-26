@@ -20,9 +20,7 @@ import entity.media.Media;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -40,47 +38,6 @@ import views.screen.cart.CartScreenHandler;
 public class HomeScreenHandler extends BaseScreenHandler implements Initializable{
 
     public static Logger LOGGER = Utils.getLogger(HomeScreenHandler.class.getName());
-    @FXML
-
-    private Pane pnlCustomer;
-    @FXML
-    private Pane pnlOrders;
-
-    @FXML
-    private Pane pnlOverview;
-
-    @FXML
-    private Pane pnlMenus;
-
-    @FXML
-    private Label closeBtn;
-
-    @FXML
-    private Label minimizeBtn;
-
-    @FXML
-    private VBox pnItems = null;
-
-    @FXML
-    private Button btnOverview;
-
-    @FXML
-    private Button btnOrders;
-
-    @FXML
-    private Button btnCustomers;
-
-    @FXML
-    private Button btnMenus;
-
-    @FXML
-    private Button btnPackages;
-
-    @FXML
-    private Button btnSettings;
-
-    @FXML
-    private Button btnSignout;
 
     @FXML
     private Label numMediaInCart;
@@ -122,73 +79,45 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
 
     @Override
     public void show() {
-//        numMediaInCart.setText(String.valueOf(Cart.getCart().getListMedia().size()) + " media");
+        numMediaInCart.setText(String.valueOf(Cart.getCart().getListMedia().size()));
         super.show();
     }
 
-//    @Override
-//    public void initialize(URL arg0, ResourceBundle arg1) {
-//        setBController(new HomeController());
-//        try{
-//            List medium = getBController().getAllMedia();
-//            this.homeItems = new ArrayList<>();
-//            for (Object object : medium) {
-//                Media media = (Media)object;
-//                MediaHandler m1 = new MediaHandler(Configs.HOME_MEDIA_PATH, media, this);
-//                this.homeItems.add(m1);
-//            }
-//        }catch (SQLException | IOException e){
-//            LOGGER.info("Errors occured: " + e.getMessage());
-//            e.printStackTrace();
-//        }
-//
-//
-//        aimsImage.setOnMouseClicked(e -> {
-//            addMediaHome(this.homeItems);
-//        });
-//
-//        cartImage.setOnMouseClicked(e -> {
-//            CartScreenHandler cartScreen;
-//            try {
-//                LOGGER.info("User clicked to view cart");
-//                cartScreen = new CartScreenHandler(this.stage, Configs.CART_SCREEN_PATH);
-//                cartScreen.setHomeScreenHandler(this);
-//                cartScreen.setBController(new ViewCartController());
-//                cartScreen.requestToViewCart(this);
-//            } catch (IOException | SQLException e1) {
-//                throw new ViewCartException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
-//            }
-//        });
-//        addMediaHome(this.homeItems);
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        setBController(new HomeController());
+        pnlCustomer.setStyle("-fx-background-color : #02030A");
+        pnlCustomer.toFront();
+
+        try{
+            List medium = getBController().getAllMedia();
+            this.homeItems = new ArrayList<>();
+            for (Object object : medium) {
+                Media media = (Media)object;
+                MediaHandler m1 = new MediaHandler(Configs.HOME_MEDIA_PATH, media, this);
+                this.homeItems.add(m1);
+            }
+        }catch (SQLException | IOException e){
+            LOGGER.info("Errors occured: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        cartImage.setOnMouseClicked(e -> {
+            CartScreenHandler cartScreen;
+            try {
+                LOGGER.info("User clicked to view cart");
+                cartScreen = new CartScreenHandler(this.stage, Configs.CART_SCREEN_PATH);
+                cartScreen.setHomeScreenHandler(this);
+                cartScreen.setBController(new ViewCartController());
+                cartScreen.requestToViewCart(this);
+            } catch (IOException | SQLException e1) {
+                throw new ViewCartException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
+            }
+        });
+        addMediaHome(this.homeItems);
 //        addMenuItem(0, "Book", splitMenuBtnSearch);
 //        addMenuItem(1, "DVD", splitMenuBtnSearch);
 //        addMenuItem(2, "CD", splitMenuBtnSearch);
-//    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        Node[] nodes = new Node[10];
-        for (int i = 0; i < nodes.length; i++) {
-            try {
-
-                final int j = i;
-                nodes[i] = FXMLLoader.load(getClass().getResource("../../fxml/Item.fxml"));
-
-                //give the items some effect
-
-                nodes[i].setOnMouseEntered(event -> {
-                    nodes[j].setStyle("-fx-background-color : #0A0E3F");
-                });
-                nodes[i].setOnMouseExited(event -> {
-                    nodes[j].setStyle("-fx-background-color : #02030A");
-                });
-                pnItems.getChildren().add(nodes[i]);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        pnlCustomer.setStyle("-fx-background-color : #02030A");
-        pnlCustomer.toFront();
     }
 
     public void setImage(){
@@ -251,6 +180,46 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         menuButton.getItems().add(position, menuItem);
     }
 
+    @FXML
+    private VBox pnItems;
+    @FXML
+    private Button btnOverview;
+
+    @FXML
+    private Button btnOrders;
+
+    @FXML
+    private Button btnCustomers;
+
+    @FXML
+    private Button btnMenus;
+
+    @FXML
+    private Button btnPackages;
+
+    @FXML
+    private Button btnSettings;
+
+    @FXML
+    private Button btnSignout;
+
+    @FXML
+    private Pane pnlCustomer;
+
+    @FXML
+    private Pane pnlOrders;
+
+    @FXML
+    private Pane pnlOverview;
+
+    @FXML
+    private Pane pnlMenus;
+
+    @FXML
+    private Label closeBtn;
+
+    @FXML
+    private Label minimizeBtn;
     public void handleClicks(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btnCustomers) {
 //            pnlCustomer.setStyle("-fx-background-color : #1620A1");
@@ -280,5 +249,4 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         Stage stage = (Stage) minimizeBtn.getScene().getWindow();
         stage.setIconified(true);
     }
-    
 }

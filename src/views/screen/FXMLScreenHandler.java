@@ -4,23 +4,28 @@ import java.io.File;
 import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 public class FXMLScreenHandler {
 
-	protected Parent content;
+	protected FXMLLoader loader;
+	protected AnchorPane content;
 
 	public FXMLScreenHandler(String screenPath) throws IOException {
-		content = FXMLLoader.load(getClass().getResource(screenPath));
+		this.loader = new FXMLLoader(getClass().getResource(screenPath));
 		// Set this class as the controller
-//		this.loader.setController(this);
+		this.loader.setController(this);
+		this.content = (AnchorPane) loader.load();
 	}
 
-	public Parent getContent() {
+	public AnchorPane getContent() {
 		return this.content;
+	}
+
+	public FXMLLoader getLoader() {
+		return this.loader;
 	}
 
 	public void setImage(ImageView imv, String path){

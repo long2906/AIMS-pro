@@ -1,25 +1,42 @@
 package views.screen.home;
 
+import common.exception.ViewCartException;
+import controller.BaseController;
+import controller.HomeController;
+import controller.ViewCartController;
+import entity.media.Media;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import utils.Configs;
+import views.screen.FXMLScreenHandler;
+import views.screen.cart.CartScreenHandler;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class HomeScreenController implements Initializable {
 
     @FXML
-    private VBox pnItems = null;
+    private HBox hboxMedia;
+    @FXML
+    private VBox pnItems;
     @FXML
     private Button btnOverview;
 
@@ -61,6 +78,36 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        addItems();
+        addMedia();
+        pnlCustomer.setStyle("-fx-background-color : #02030A");
+        pnlCustomer.toFront();
+    }
+
+    private void addMedia(){ ;
+    }
+
+    public void addMediaHome(List items){
+        ArrayList mediaItems = (ArrayList)((ArrayList) items).clone();
+        hboxMedia.getChildren().forEach(node -> {
+            VBox vBox = (VBox) node;
+            vBox.getChildren().clear();
+        });
+        while(!mediaItems.isEmpty()){
+            hboxMedia.getChildren().forEach(node -> {
+                int vid = hboxMedia.getChildren().indexOf(node);
+                VBox vBox = (VBox) node;
+                while(vBox.getChildren().size()<3 && !mediaItems.isEmpty()){
+                    MediaHandler media = (MediaHandler) mediaItems.get(0);
+                    vBox.getChildren().add(media.getContent());
+                    mediaItems.remove(media);
+                }
+            });
+            return;
+        }
+    }
+
+    private void addItems(){
         Node[] nodes = new Node[10];
         for (int i = 0; i < nodes.length; i++) {
             try {
@@ -81,10 +128,7 @@ public class Controller implements Initializable {
                 e.printStackTrace();
             }
         }
-        pnlCustomer.setStyle("-fx-background-color : #02030A");
-        pnlCustomer.toFront();
     }
-
 
     public void handleClicks(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btnCustomers) {
