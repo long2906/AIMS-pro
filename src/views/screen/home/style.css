@@ -1,7 +1,7 @@
 .button
 {
 -fx-background-color : #05071F;
--fx-text-fill : #e7e5e5;
+-fx-text-fill : white;
 }
 .button:hover{
 -fx-background-color : #10165F;
@@ -10,9 +10,48 @@
 {
 -fx-background-color : #1620A1;
 }
-
 .scroll-pane {
     -fx-background-color: #02030A;
+}
+
+.menu-item .label {
+    -fx-text-fill: white;
+}
+
+.menu-item:focused {
+    -fx-background-color: darkgray;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: #13185e;
+}
+
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color: black;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+    /*    -fx-padding: 0.666667em 0.083333em 0.666667em 0.083333em;  8 1 8 1 */
+    -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em; /* 4 1 8 1 */
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-body-color: #1620A1;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    /* interpolate color between yellow and red based on first color brightness */
+    -fx-body-color: ladder(#444, yellow 0%, red 100%);
+}
+
+.spinner .increment-arrow-button:hover:pressed,
+.spinner .decrement-arrow-button:hover:pressed,
+.spinner .increment-arrow-button:pressed,
+.spinner .decrement-arrow-button:pressed {
+    /* interpolate color between yellow and red based on first color brightness */
+    -fx-body-color: ladder(#AAA, yellow 0%, red 100%);
 }
 
 .scroll-bar:horizontal, .scroll-bar:vertical{
@@ -39,4 +78,16 @@
 
 .scroll-pane > .corner {
     -fx-background-color: black;
+}
+
+.text-field{
+    -fx-font-family: "Quicksand";
+    -fx-font-size: 18;
+    -fx-padding: 1,1,1,1;
+    /*-fx-border-color: grey;*/
+    /*-fx-border-width: 2;*/
+    -fx-border-radius: 1;
+    -fx-border: gone;
+    -fx-background-color: transparent;
+    -fx-text-fill: #e7e5e5;
 }

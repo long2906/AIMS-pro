@@ -21,6 +21,7 @@
 <?import javafx.scene.text.Font?>
 
 <!--        fx:controller="home.Controller"-->
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="256.0" style="-fx-background-color: #05071F;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -163,7 +164,7 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <MenuButton contentDisplay="CENTER" layoutX="329.0" layoutY="96.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="153.0" style="-fx-background-color: #02030A; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" text="Price" textFill="#6b79e4">
+                  <MenuButton contentDisplay="CENTER" layoutX="329.0" layoutY="96.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="153.0" style="-fx-background-color: #02030A; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" stylesheets="@../screen/home/style.css" text="Price" textFill="#6b79e4">
                     <items>
                       <MenuItem mnemonicParsing="false" text="Price: Low to Hight" />
                       <MenuItem mnemonicParsing="false" text="Price: Hight to Low" />
@@ -187,7 +188,7 @@
                         <ColorAdjust brightness="0.69" />
                      </effect>
                   </ImageView>
-                  <Label fx:id="numMediaInCart" layoutX="1003.0" layoutY="50.0" prefHeight="20.0" prefWidth="36.0" text="3" textFill="#e3e3e3d9">
+                  <Label fx:id="numMediaInCart" layoutX="1003.0" layoutY="50.0" prefHeight="25.0" prefWidth="53.0" text="3" textFill="#e3e3e3d9">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>

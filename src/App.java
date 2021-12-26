@@ -39,7 +39,7 @@ public class App extends Application  {
 	}
 
 	private StackPane initSplashScene() throws IOException{
-//		stage.initStyle(StageStyle.UNDECORATED);
+		stage.initStyle(StageStyle.UNDECORATED);
 
 		// initialize the scene
 		StackPane root = (StackPane) FXMLLoader.load(getClass().getResource(Configs.SPLASH_SCREEN_PATH));

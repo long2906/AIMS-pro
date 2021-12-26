@@ -10,15 +10,11 @@ import entity.cart.Cart;
 import entity.cart.CartMedia;
 import entity.media.Media;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import utils.Utils;
 import views.screen.FXMLScreenHandler;
-import views.screen.home.HomeScreenHandler;
 import views.screen.popup.PopupScreen;
 
 public class MediaHandler extends FXMLScreenHandler{
@@ -41,36 +37,46 @@ public class MediaHandler extends FXMLScreenHandler{
     @FXML
     protected Button addToCartBtn;
 
+    @FXML
+    protected Button btnSubtract;
+
+    @FXML
+    protected Button btnAdd;
+
+    @FXML
+    protected TextField textQuantily;
+
     private static Logger LOGGER = Utils.getLogger(MediaHandler.class.getName());
     private Media media;
     private HomeScreenHandler home;
-
+    private int quantily;
     public MediaHandler(String screenPath, Media media, HomeScreenHandler home) throws SQLException, IOException{
         super(screenPath);
+        this.quantily = Integer.valueOf(textQuantily.getText());
         this.media = media;
         this.home = home;
         addToCartBtn.setOnMouseClicked(event -> {
             try {
-                if (spinnerChangeNumber.getValue() > media.getQuantity()) throw new MediaNotAvailableException();
+                if (quantily > media.getQuantity()) throw new MediaNotAvailableException();
                 Cart cart = Cart.getCart();
                 // if media already in cart then we will increase the quantity by 1 instead of create the new cartMedia
                 CartMedia mediaInCart = home.getBController().checkMediaInCart(media);
                 if (mediaInCart != null) {
                     mediaInCart.setQuantity(mediaInCart.getQuantity() + 1);
                 }else{
-                    CartMedia cartMedia = new CartMedia(media, cart, spinnerChangeNumber.getValue(), media.getPrice());
+                    CartMedia cartMedia = new CartMedia(media, cart, quantily, media.getPrice());
                     cart.getListMedia().add(cartMedia);
                     LOGGER.info("Added " + cartMedia.getQuantity() + " " + media.getTitle() + " to cart");
                 }
 
                 // subtract the quantity and redisplay
-                media.setQuantity(media.getQuantity() - spinnerChangeNumber.getValue());
+                media.setQuantity(media.getQuantity() - quantily);
                 mediaAvail.setText(String.valueOf(media.getQuantity()));
-                home.getNumMediaCartLabel().setText(String.valueOf(cart.getTotalMedia() + " media"));
+                home.getNumMediaCartLabel().setText(String.valueOf(cart.getTotalMedia() ));
                 PopupScreen.success("The media " + media.getTitle() + " added to Cart");
             } catch (MediaNotAvailableException exp) {
                 try {
-                    String message = "Not enough media:\nRequired: " + spinnerChangeNumber.getValue() + "\nAvail: " + media.getQuantity();
+                    String message = "Not enough media:\nRequired: " + quantily + "\nAvail: " + media.getQuantity();
                     LOGGER.severe(message);
                     PopupScreen.error(message);
                 } catch (Exception e) {
@@ -100,11 +106,21 @@ public class MediaHandler extends FXMLScreenHandler{
         mediaTitle.setText(media.getTitle());
         mediaPrice.setText(Utils.getCurrencyFormat(media.getPrice()));
         mediaAvail.setText(Integer.toString(media.getQuantity()));
-        spinnerChangeNumber.setValueFactory(
-            new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 1)
-        );
+        textQuantily.setText("1");
+//        spinnerChangeNumber.setValueFactory(
+//            new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 1)
+//        );
 
         setImage(mediaImage, media.getImageURL());
     }
-    
+
+    public void addQuantity(){
+        quantily++;
+        textQuantily.setText(String.valueOf(quantily));
+    }
+
+    public void subQuantity(){
+        quantily--;
+        textQuantily.setText(String.valueOf(quantily));
+    }
 }
