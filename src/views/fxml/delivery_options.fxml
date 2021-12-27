@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="pageTitle" layoutX="44.0" layoutY="-3.0" prefHeight="86.0" prefWidth="419.0" text="Shipping Instructions" textAlignment="CENTER" textFill="#5091e6">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="601.0" layoutY="663.0" />
+      <GridPane layoutX="834.0" layoutY="476.0" prefHeight="187.0" prefWidth="370.0" style="-fx-border-color: #E7E5E5FF; -fx-border-radius: 20;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.2" minWidth="0.0" prefWidth="152.79990234375" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="843.2" minWidth="0.0" prefWidth="215.20009765625" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="108.60001220703126" minHeight="0.0" prefHeight="47.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="168.5999969482422" minHeight="0.0" prefHeight="46.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="311.8000549316406" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="311.8000549316406" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Subtotal" textFill="#e7e5e5">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label text="Shipping Fees" textFill="#e7e5e5" GridPane.rowIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Total" textFill="#e7e5e5" GridPane.rowIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="subtotal" alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="201.0" text="100,000 đ" textFill="#e7e5e5" GridPane.columnIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="total" alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="201.0" text="150,000 đ" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="shippingFees" alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="202.0" text="50,000 đ" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label text="VAT" textFill="#e7e5e5" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="subtotal1" alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="201.0" text="10,000 đ" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <GridPane layoutX="834.0" layoutY="82.0" prefHeight="262.0" prefWidth="375.0" style="-fx-border-color: #E7E5E5FF; -fx-border-radius: 20;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.2" minWidth="0.0" prefWidth="141.4666748046875" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="843.2" minWidth="0.0" prefWidth="232.13332519531247" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="108.60001220703126" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="168.5999969482422" minHeight="10.0" prefHeight="35.999993896484376" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="313.59999389648436" minHeight="10.0" prefHeight="37.79998779296875" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="292.80002441406253" minHeight="10.0" prefHeight="42.79998474121095" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="311.8000549316406" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Name" textFill="#e7e5e5">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label text="Phone" textFill="#e7e5e5" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="204.0" text="City" textFill="#e7e5e5" GridPane.rowIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Address" textFill="#e7e5e5" GridPane.rowIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="134.0" text="Message&#10;" textFill="#e7e5e5" GridPane.rowIndex="4">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="name" prefHeight="33.0" prefWidth="472.0" text="Full name" textFill="#e7e5e5" GridPane.columnIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="phone" prefHeight="31.0" prefWidth="466.0" text="0987654321" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="province" prefHeight="34.0" prefWidth="475.0" text="Hanoi" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="address" prefHeight="38.0" prefWidth="467.0" text="Address" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="instructions" prefHeight="87.0" prefWidth="252.0" text="This is message" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <ButtonBar buttonMinWidth="120.0" layoutX="834.0" layoutY="357.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="72.0" prefWidth="383.0">
+         <buttons>
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="182.0" style="-fx-background-color: #02030A; -fx-border-color: #B7C3D7; -fx-border-radius: 10em; -fx-border-width: 2;" text="Normal Order" textFill="#e7e5e5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="182.0" style="-fx-background-color: #02030A; -fx-border-color: #B7C3D7; -fx-border-radius: 10em; -fx-border-width: 2;" text="Place Rush Order" textFill="#e7e5e5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </buttons>
+      </ButtonBar>
+      <ScrollPane fx:id="vboxIte" layoutX="44.0" layoutY="83.0" prefHeight="646.0" prefWidth="734.0" style="-fx-border-color: #928D8DFF; -fx-border-radius: 30;" stylesheets="@../screen/home/style.css">
+         <content>
+            <VBox fx:id="vboxItems" alignment="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="641.0" prefWidth="727.0" style="-fx-background-color: #222222;" translateX="1.0" />
+         </content>
+      </ScrollPane>
+      <Label fx:id="province1" layoutX="836.0" layoutY="436.0" prefHeight="23.0" prefWidth="366.0" text="Note: Place rush order only support Hanoi city" textFill="#e7e5e5" wrapText="true">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button layoutX="834.0" layoutY="684.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="373.0" style="-fx-background-color: #02030A; -fx-border-color: #B7C3D7; -fx-border-radius: 15; -fx-border-width: 2;" text="Place Order" textFill="#5f8aef">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -10,8 +10,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #05071F;" stylesheets="@../screen/home/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
+      <ImageView fitHeight="426.0" fitWidth="600.0" layoutX="35.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../card-main.png" />
+         </image>
+      </ImageView>
       <Label fx:id="pageTitle" layoutX="70.0" layoutY="1.0" prefHeight="96.0" prefWidth="216.0" text="Payment" textAlignment="CENTER" textFill="#5091e6">
          <font>
             <Font name="Segoe UI Semibold" size="42.0" />
@@ -22,62 +27,18 @@
             <Image url="@../../../assets/images/Logo.png" />
          </image>
       </ImageView>
-      <Label layoutX="71.0" layoutY="97.0" prefHeight="50.0" prefWidth="251.0" text="Payment method">
+      <Label layoutX="71.0" layoutY="97.0" prefHeight="50.0" prefWidth="251.0" text="Payment method" textFill="#d1c5c5">
          <font>
             <Font name="Segoe UI" size="24.0" />
          </font>
       </Label>
-      <VBox layoutX="114.0" layoutY="163.0" prefHeight="500.0" prefWidth="500.0">
+      <VBox layoutX="114.0" layoutY="163.0" prefHeight="62.0" prefWidth="381.0">
          <children>
-            <RadioButton disable="true" mnemonicParsing="false" selected="true" text="Credit Card">
+            <RadioButton disable="true" mnemonicParsing="false" selected="true" text="Credit Card" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
             </RadioButton>
-         </children>
-      </VBox>
-      <VBox layoutX="772.0" layoutY="158.0" prefHeight="500.0" prefWidth="500.0">
-         <children>
-            <Label prefHeight="50.0" prefWidth="182.0" text="Card number:">
-               <font>
-                  <Font name="Calibri" size="24.0" />
-               </font>
-            </Label>
-            <TextField fx:id="cardNumber" text="118609_group1_2020">
-               <font>
-                  <Font name="Calibri" size="24.0" />
-               </font>
-            </TextField>
-            <Label prefHeight="50.0" prefWidth="231.0" text="Card holder name:">
-               <font>
-                  <Font name="Calibri" size="24.0" />
-               </font>
-            </Label>
-            <TextField fx:id="holderName" text="Group 1">
-               <font>
-                  <Font name="Calibri" size="24.0" />
-               </font>
-            </TextField>
-            <Label prefHeight="50.0" prefWidth="243.0" text="Expiration date:">
-               <font>
-                  <Font name="Calibri" size="24.0" />
-               </font>
-            </Label>
-            <TextField fx:id="expirationDate" text="11/25">
-               <font>
-                  <Font name="Calibri" size="24.0" />
-               </font>
-            </TextField>
-            <Label text="Card security code:">
-               <font>
-                  <Font name="Calibri" size="24.0" />
-               </font>
-            </Label>
-            <TextField fx:id="securityCode" text="185">
-               <font>
-                  <Font name="Calibri" size="24.0" />
-               </font>
-            </TextField>
          </children>
       </VBox>
       <Button fx:id="btnConfirmPayment" alignment="CENTER" contentDisplay="CENTER" layoutX="518.0" layoutY="671.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="316.0" style="-fx-background-color: #5091e6; -fx-cursor: hand;" text="Confirm payment" textFill="WHITE">
@@ -85,6 +46,50 @@
             <Font name="Segoe UI Bold" size="24.0" />
          </font>
       </Button>
+      <VBox layoutX="772.0" layoutY="174.0" prefHeight="395.0" prefWidth="428.0">
+         <children>
+            <Label prefHeight="50.0" prefWidth="182.0" text="Card number:" textFill="#d1c5c5">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cardNumber" prefHeight="40.0" prefWidth="500.0" style="-fx-border-color: B0B0B1FF; -fx-border-radius: 10;" text="118609_group1_2020">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </TextField>
+            <Label prefHeight="50.0" prefWidth="231.0" text="Card holder name:" textFill="#d1c5c5">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="holderName" prefHeight="42.0" prefWidth="500.0" style="-fx-border-color: B0B0B1FF; -fx-border-radius: 10;" text="Group 1">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </TextField>
+            <Label prefHeight="50.0" prefWidth="243.0" text="Expiration date:" textFill="#d1c5c5">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="expirationDate" prefHeight="43.0" prefWidth="500.0" style="-fx-border-color: B0B0B1FF; -fx-border-radius: 10;" text="11/25">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </TextField>
+            <Label text="Card security code:" textFill="#d1c5c5">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="securityCode" prefHeight="43.0" prefWidth="500.0" style="-fx-border-color: B0B0B1FF; -fx-border-radius: 10;" text="185">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </TextField>
+         </children>
+      </VBox>
       <ImageView fx:id="loadingImage" fitHeight="135.0" fitWidth="170.0" layoutX="553.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

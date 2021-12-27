@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #05071F;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="pageTitle" layoutX="60.0" layoutY="-9.0" prefHeight="96.0" prefWidth="128.0" text="CART" textAlignment="CENTER" textFill="#5091e6">
          <font>
-            <Font name="Segoe UI Semibold" size="42.0" />
+            <Font name=".VnCourier New Bold" size="42.0" />
          </font>
       </Label>
       <ImageView fx:id="aimsImage" fitHeight="73.0" fitWidth="73.0" layoutX="-6.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
@@ -22,7 +22,7 @@
             <Image url="@../../../assets/images/Logo.png" />
          </image>
       </ImageView>
-      <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="987.0">
+      <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="987.0" stylesheets="@../screen/home/style.css">
          <content>
             <VBox fx:id="vboxCart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="567.0" />
          </content>
@@ -31,9 +31,9 @@
          <children>
             <HBox prefHeight="56.0" prefWidth="316.0">
                <children>
-                  <Label fx:id="subtotal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="163.0" text="Subtotal:" textAlignment="CENTER">
+                  <Label fx:id="subtotal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="163.0" text="Subtotal:" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="labelSubtotal" prefHeight="55.0" prefWidth="239.0" text="1000000 VND" textFill="#5091e6">
@@ -45,14 +45,14 @@
             </HBox>
             <HBox prefHeight="83.0" prefWidth="344.0">
                <children>
-                  <Label prefHeight="58.0" prefWidth="54.0" text="VAT">
+                  <Label prefHeight="58.0" prefWidth="54.0" text="VAT" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="58.0" prefWidth="106.0" text="(10%):">
+                  <Label prefHeight="58.0" prefWidth="106.0" text="(10%):" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="labelVAT" prefHeight="58.0" prefWidth="167.0" text="1000 VND" textFill="#5091e6">
@@ -64,9 +64,9 @@
             </HBox>
             <HBox prefHeight="70.0" prefWidth="344.0">
                <children>
-                  <Label contentDisplay="CENTER" prefHeight="45.0" prefWidth="180.0" text="Amount:">
+                  <Label contentDisplay="CENTER" prefHeight="45.0" prefWidth="180.0" text="Amount:" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="labelAmount" prefHeight="45.0" prefWidth="206.0" text="1100000 VND" textFill="#5091e6">

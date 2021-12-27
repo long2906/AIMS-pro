@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #05071F;" stylesheets="@../screen/home/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="screenTitle" layoutX="60.0" layoutY="-9.0" prefHeight="96.0" prefWidth="208.0" text="SHIPPING" textAlignment="CENTER" textFill="#5091e6">
          <font>
@@ -41,9 +41,9 @@
          <children>
             <Pane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="29.0" layoutY="16.0" prefHeight="30.0" prefWidth="97.0" text="Name">
+                  <Label layoutX="29.0" layoutY="16.0" prefHeight="30.0" prefWidth="97.0" text="Name" textFill="WHITE">
                      <font>
-                        <Font name="Segoe UI" size="24.0" />
+                        <Font size="24.0" />
                      </font>
                      <padding>
                         <Insets left="10.0" />
@@ -56,31 +56,31 @@
                   </Label>
                </children>
             </Pane>
-            <TextField fx:id="name" prefHeight="50.0" promptText="(a-zA-Z)" GridPane.columnIndex="1">
+            <TextField fx:id="name" prefHeight="50.0" promptText="(a-zA-Z)" style="-fx-border-color: B0B0B1FF; -fx-border-radius: 10;" GridPane.columnIndex="1">
                <font>
                   <Font name="Segoe UI" size="24.0" />
                </font>
             </TextField>
-            <TextField fx:id="phone" prefHeight="50.0" promptText="(0-9) 10 digits" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="phone" prefHeight="50.0" promptText="(0-9) 10 digits" style="-fx-border-color: B0B0B1FF; -fx-border-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Segoe UI" size="24.0" />
                </font>
             </TextField>
-            <TextField fx:id="address" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="843.0" promptText="(a-zA-Z)" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="address" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="843.0" promptText="(a-zA-Z)" style="-fx-border-color: B0B0B1FF; -fx-border-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe UI" size="24.0" />
                </font>
             </TextField>
-            <TextField fx:id="instructions" alignment="TOP_LEFT" prefHeight="140.0" prefWidth="843.0" promptText="(a-zA-Z)" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField fx:id="instructions" alignment="TOP_LEFT" prefHeight="140.0" prefWidth="843.0" promptText="(a-zA-Z)" style="-fx-border-color: B0B0B1FF; -fx-border-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font name="Segoe UI" size="24.0" />
                </font>
             </TextField>
             <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <Label layoutX="36.0" layoutY="16.0" text="Phone">
+                  <Label layoutX="36.0" layoutY="16.0" text="Phone" textFill="WHITE">
                      <font>
-                        <Font name="Segoe UI" size="24.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="21.0" prefHeight="20.0" prefWidth="22.0" text="*" textAlignment="CENTER" textFill="#eb0d0d">
@@ -92,9 +92,9 @@
             </Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                <children>
-                  <Label layoutX="38.0" layoutY="44.0" text="Address">
+                  <Label layoutX="38.0" layoutY="44.0" text="Address" textFill="WHITE">
                      <font>
-                        <Font name="Segoe UI" size="24.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="49.0" prefHeight="20.0" prefWidth="22.0" text="*" textAlignment="CENTER" textFill="#eb0d0d">
@@ -106,23 +106,23 @@
             </Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
                <children>
-                  <Label layoutX="24.0" layoutY="77.0" text="Shipping&#10;Instructions">
+                  <Label layoutX="24.0" layoutY="77.0" text="Shipping&#10;Instructions" textFill="WHITE">
                      <font>
-                        <Font name="Segoe UI" size="24.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <ComboBox fx:id="province" prefHeight="50.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ComboBox fx:id="province" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #05071F; -fx-border-color: B0B0B1FF; -fx-border-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </ComboBox>
             <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                <children>
-                  <Label layoutX="35.0" layoutY="18.0" prefHeight="30.0" prefWidth="99.0" text="City">
+                  <Label layoutX="35.0" layoutY="18.0" prefHeight="30.0" prefWidth="99.0" text="City" textFill="WHITE">
                      <font>
-                        <Font name="Segoe UI" size="24.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="23.0" prefHeight="20.0" prefWidth="22.0" text="*" textAlignment="CENTER" textFill="#eb0d0d">
